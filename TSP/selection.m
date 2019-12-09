@@ -1,6 +1,6 @@
 function [ pop ] = selection( population, nbrSolution, nbrVilles, nbrPaires)
 [lignes,colonnes] = size(population);
-population = sortrows(population,-colonnes)
+population = sortrows(population,-colonnes);
 score = 1;
 score_total = 0;
 for i = 1 : lignes

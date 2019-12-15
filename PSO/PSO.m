@@ -9,7 +9,7 @@ c2 = 2;
 
 %colonnes 1 : QS values
 %colonnes 2 : QC values
-pop = init(nbrPart);
+pop = init(nbrPart)
 
 %nbrVar : nombre de variable (colonnes)
 %nbrPart : nombre de particule ou bien solution (lignes)

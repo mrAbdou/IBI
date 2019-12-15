@@ -10,16 +10,17 @@ c2 = 2;
 
 %colonnes 1 : QS values
 %colonnes 2 : QC values
-pop = init(nbrPart)
+pop = init(nbrPart);
 
 %nbrVar : nombre de variable (colonnes)
 %nbrPart : nombre de particule ou bien solution (lignes)
 j = 1;
 [nbrPart, nbrVal] = size(pop);
 while j <= nbrIterations
+    pop
     %[nbrPart, nbrVal] = size(pop);
     for i = 1 :nbrPart
-        pop(i,:) = miseAjour(pop(i,:),vitesse);
+        pop(i,:) = miseAjour(pop(i,:),vitesse, i);
     end
     
     p = -(ones(nbrPart, nbrVal + 1) ./ zeros(nbrPart,nbrVal + 1));
@@ -39,6 +40,9 @@ while j <= nbrIterations
     for i = 1 : size(pop,1)
         vitesse(i,:) = formule(w,c1,c2,vitesse(i,:), gBest(1,1:nbrVal),pop(i,:),p(i,1:nbrVal));
     end
+    vitesse
     j = j + 1;
 end
 plot(g(:,nbrVal+1))
+disp('best solution');
+gBest

@@ -1,5 +1,6 @@
 clear;
 clc;
+close all;
 nbrPart = 5;
 nbrIterations = 2;
 vitesse = rand(nbrPart,2);
@@ -30,16 +31,14 @@ while j <= nbrIterations
     end
     gBest = zeros(1,nbrVal);
     best = sortrows(pop, -(nbrVal+1));
-    g = best(1,:);
-    if(g(1,nbrVal) >= gBest(1,nbrVal))
-        gBest = g;
+    g(j,:) = best(1,:);
+    if(g(j,nbrVal) >= gBest(1,nbrVal))
+        gBest = g(j,:);
     end
     pop = pop(:,1:nbrVal);
-    vitesse
     for i = 1 : size(pop,1)
         vitesse(i,:) = formule(w,c1,c2,vitesse(i,:), gBest(1,1:nbrVal),pop(i,:),p(i,1:nbrVal));
     end
-    vitesse
-    
     j = j + 1;
 end
+plot(g(:,nbrVal+1))

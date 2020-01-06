@@ -1,10 +1,11 @@
-function [ pop ] = init( nbrPart)
-min_QS = 2;
-max_QS = 10;
-min_QC = 6;
-max_QC = 8;
-p(:,1) = min_QS + (max_QS-min_QS).*rand(nbrPart,1);
-p(:,2) = min_QC + (max_QC-min_QC).*rand(nbrPart,1);
-pop = p;
+function [ pop] = init(QS,QC,varSize, meilleurs)
+population = zeros(varSize);% matrice des quatite (de sucre et du cafe)
+for i = 1 : varSize(1)
+    population(i,1) = QS(1) + (QS(2) - QS(1))*rand;
+    population(i,2) = QC(1) + (QC(2) - QC(1))*rand;
+    population(i,4) = rand;
+    population(i,5) = rand;
+end
+pop = population;
 end
 

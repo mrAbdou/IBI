@@ -1,0 +1,18 @@
+function [ pop, best ] = init(QS,QC,varSize, meilleurs)
+population = zeros(varSize);% matrice des quatite (de sucre et du cafe)
+for i = 1 : nIndividus
+    population(i,1) = QS(1) + (QS(2) - QS(1))*rand;
+    population(i,2) = QC(1) + (QC(2) - QC(1))*rand;
+    population(i,4) = rand;
+    population(i,5) = rand;
+    %meilleurs(3) : la meilleur valeur du gout trouver 
+    %if meilleurs(i,3) <= population(i,3)
+    %meilleurs(i,1) = population(i,1);
+    %meilleurs(i,2) = population(i,2);
+    %meilleurs(i,3) = population(i,3); 
+    end
+end
+pop = population;
+best = meilleurs;
+end
+
